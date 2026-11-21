@@ -1,0 +1,300 @@
+{
+  "projectTitle": "Contoh Hybrid Storytelling 2D + 3D + Karaoke",
+  "fps": 30,
+  "audioPath": null,
+  "fullDurationInFrames": 397,
+  "highlightDurationInFrames": 261,
+  "fullScenes": [
+    {
+      "id": "scene-01-hook",
+      "beat": "hook",
+      "energy": "T3",
+      "highlight": true,
+      "visualType": "2d-kinetic",
+      "headline": "Rahasia Kemasan Ramah Lingkungan Modern",
+      "subtext": "Mengapa industri beralih dari plastik sekali pakai ke kertas food-grade.",
+      "captionText": "Tahukah kamu, kemasan kertas jauh lebih ramah lingkungan?",
+      "startFrame": 0,
+      "durationInFrames": 124,
+      "audioStartFrame": 0,
+      "wordTimings": [
+        {
+          "word": "Tahukah",
+          "startFrame": 0,
+          "endFrame": 14
+        },
+        {
+          "word": "kamu,",
+          "startFrame": 14,
+          "endFrame": 29
+        },
+        {
+          "word": "kemasan",
+          "startFrame": 29,
+          "endFrame": 44
+        },
+        {
+          "word": "kertas",
+          "startFrame": 44,
+          "endFrame": 58
+        },
+        {
+          "word": "jauh",
+          "startFrame": 58,
+          "endFrame": 72
+        },
+        {
+          "word": "lebih",
+          "startFrame": 72,
+          "endFrame": 87
+        },
+        {
+          "word": "ramah",
+          "startFrame": 87,
+          "endFrame": 102
+        },
+        {
+          "word": "lingkungan?",
+          "startFrame": 102,
+          "endFrame": 116
+        }
+      ]
+    },
+    {
+      "id": "scene-02-setup-3d",
+      "beat": "setup",
+      "energy": "T2",
+      "visualType": "3d-showcase",
+      "headline": "Struktur Lipatan Presisi Tinggi",
+      "subtext": "Desain mengunci panas makanan tanpa lem berbahaya.",
+      "captionText": "Setiap sudut dirancang presisi tinggi agar makanan tetap hangat.",
+      "startFrame": 124,
+      "durationInFrames": 136,
+      "audioStartFrame": 124,
+      "wordTimings": [
+        {
+          "word": "Setiap",
+          "startFrame": 0,
+          "endFrame": 14
+        },
+        {
+          "word": "sudut",
+          "startFrame": 14,
+          "endFrame": 28
+        },
+        {
+          "word": "dirancang",
+          "startFrame": 28,
+          "endFrame": 43
+        },
+        {
+          "word": "presisi",
+          "startFrame": 43,
+          "endFrame": 57
+        },
+        {
+          "word": "tinggi",
+          "startFrame": 57,
+          "endFrame": 71
+        },
+        {
+          "word": "agar",
+          "startFrame": 71,
+          "endFrame": 85
+        },
+        {
+          "word": "makanan",
+          "startFrame": 85,
+          "endFrame": 100
+        },
+        {
+          "word": "tetap",
+          "startFrame": 100,
+          "endFrame": 114
+        },
+        {
+          "word": "hangat.",
+          "startFrame": 114,
+          "endFrame": 128
+        }
+      ]
+    },
+    {
+      "id": "scene-03-climax",
+      "beat": "climax",
+      "energy": "T3",
+      "highlight": true,
+      "visualType": "2d-kinetic",
+      "headline": "Terurai Dalam 90 Hari",
+      "subtext": "Plastik butuh ratusan tahun, kertas food-grade hanya beberapa bulan.",
+      "captionText": "Hasilnya, kemasan ini terurai hanya dalam sembilan puluh hari.",
+      "startFrame": 260,
+      "durationInFrames": 137,
+      "audioStartFrame": 260,
+      "wordTimings": [
+        {
+          "word": "Hasilnya,",
+          "startFrame": 0,
+          "endFrame": 14
+        },
+        {
+          "word": "kemasan",
+          "startFrame": 14,
+          "endFrame": 29
+        },
+        {
+          "word": "ini",
+          "startFrame": 29,
+          "endFrame": 43
+        },
+        {
+          "word": "terurai",
+          "startFrame": 43,
+          "endFrame": 57
+        },
+        {
+          "word": "hanya",
+          "startFrame": 57,
+          "endFrame": 72
+        },
+        {
+          "word": "dalam",
+          "startFrame": 72,
+          "endFrame": 86
+        },
+        {
+          "word": "sembilan",
+          "startFrame": 86,
+          "endFrame": 100
+        },
+        {
+          "word": "puluh",
+          "startFrame": 100,
+          "endFrame": 115
+        },
+        {
+          "word": "hari.",
+          "startFrame": 115,
+          "endFrame": 129
+        }
+      ]
+    }
+  ],
+  "highlightScenes": [
+    {
+      "id": "scene-01-hook",
+      "beat": "hook",
+      "energy": "T3",
+      "highlight": true,
+      "visualType": "2d-kinetic",
+      "headline": "Rahasia Kemasan Ramah Lingkungan Modern",
+      "subtext": "Mengapa industri beralih dari plastik sekali pakai ke kertas food-grade.",
+      "captionText": "Tahukah kamu, kemasan kertas jauh lebih ramah lingkungan?",
+      "startFrame": 0,
+      "durationInFrames": 124,
+      "audioStartFrame": 0,
+      "wordTimings": [
+        {
+          "word": "Tahukah",
+          "startFrame": 0,
+          "endFrame": 14
+        },
+        {
+          "word": "kamu,",
+          "startFrame": 14,
+          "endFrame": 29
+        },
+        {
+          "word": "kemasan",
+          "startFrame": 29,
+          "endFrame": 44
+        },
+        {
+          "word": "kertas",
+          "startFrame": 44,
+          "endFrame": 58
+        },
+        {
+          "word": "jauh",
+          "startFrame": 58,
+          "endFrame": 72
+        },
+        {
+          "word": "lebih",
+          "startFrame": 72,
+          "endFrame": 87
+        },
+        {
+          "word": "ramah",
+          "startFrame": 87,
+          "endFrame": 102
+        },
+        {
+          "word": "lingkungan?",
+          "startFrame": 102,
+          "endFrame": 116
+        }
+      ]
+    },
+    {
+      "id": "scene-03-climax",
+      "beat": "climax",
+      "energy": "T3",
+      "highlight": true,
+      "visualType": "2d-kinetic",
+      "headline": "Terurai Dalam 90 Hari",
+      "subtext": "Plastik butuh ratusan tahun, kertas food-grade hanya beberapa bulan.",
+      "captionText": "Hasilnya, kemasan ini terurai hanya dalam sembilan puluh hari.",
+      "startFrame": 124,
+      "durationInFrames": 137,
+      "audioStartFrame": 260,
+      "wordTimings": [
+        {
+          "word": "Hasilnya,",
+          "startFrame": 0,
+          "endFrame": 14
+        },
+        {
+          "word": "kemasan",
+          "startFrame": 14,
+          "endFrame": 29
+        },
+        {
+          "word": "ini",
+          "startFrame": 29,
+          "endFrame": 43
+        },
+        {
+          "word": "terurai",
+          "startFrame": 43,
+          "endFrame": 57
+        },
+        {
+          "word": "hanya",
+          "startFrame": 57,
+          "endFrame": 72
+        },
+        {
+          "word": "dalam",
+          "startFrame": 72,
+          "endFrame": 86
+        },
+        {
+          "word": "sembilan",
+          "startFrame": 86,
+          "endFrame": 100
+        },
+        {
+          "word": "puluh",
+          "startFrame": 100,
+          "endFrame": 115
+        },
+        {
+          "word": "hari.",
+          "startFrame": 115,
+          "endFrame": 129
+        }
+      ]
+    }
+  ]
+}
