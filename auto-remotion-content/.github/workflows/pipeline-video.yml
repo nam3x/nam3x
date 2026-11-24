@@ -1,0 +1,93 @@
+name: Pipeline Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_format:
+        description: "Format video"
+        required: true
+        default: short
+        type: choice
+        options:
+          - short
+          - long
+      webhook_callback:
+        description: "URL webhook n8n untuk menerima out/final_video.mp4"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pipeline-video
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      VIDEO_FORMAT: ${{ github.event.inputs.video_format }}
+      WEBHOOK_CALLBACK: ${{ github.event.inputs.webhook_callback }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          npm install -g @anthropic-ai/claude-code
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate voiceover (Gemini TTS)
+        env:
+          GEMINI_AUTH_JSON: ${{ secrets.GEMINI_AUTH_JSON }}
+        run: node scripts/generate-tts.js
+
+      - name: Upload TTS debug (jika gagal)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tts-debug
+          path: tts-debug/
+          if-no-files-found: ignore
+
+      - name: Sesuaikan komponen dengan Claude Code
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "Gunakan skill remotion-storyteller. Baca public/naskah.json dan sesuaikan durasi tiap scene dengan public/voiceover.mp3 untuk format ${VIDEO_FORMAT}. Update komponen di src/." --dangerously-skip-permissions
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Render video
+        run: |
+          mkdir -p out
+          if [ "$VIDEO_FORMAT" = "long" ]; then COMP=LongVideo; else COMP=ShortVideo; fi
+          npx remotion render src/index.ts "$COMP" out/final_video.mp4
+
+      - name: Kirim video ke webhook n8n
+        run: |
+          curl --fail-with-body -sS -X POST "$WEBHOOK_CALLBACK" \
+            -F "file=@out/final_video.mp4;type=video/mp4" \
+            --form-string "video_format=$VIDEO_FORMAT" \
+            --form-string "run_id=${{ github.run_id }}" \
+            --form-string "repository=${{ github.repository }}"
+
+      - name: Upload video sebagai artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-video-${{ github.event.inputs.video_format }}
+          path: out/final_video.mp4
+          if-no-files-found: ignore
+          retention-days: 7

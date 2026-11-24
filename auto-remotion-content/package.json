@@ -1,0 +1,25 @@
+{
+  "name": "auto-remotion-content",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pipeline otomatis: naskah.json -> TTS Gemini -> Remotion -> video Shorts/Long",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "tts": "node scripts/generate-tts.js",
+    "render:short": "remotion render src/index.ts ShortVideo out/final_video.mp4",
+    "render:long": "remotion render src/index.ts LongVideo out/final_video.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.546",
+    "@remotion/media-utils": "4.0.546",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.546"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "playwright": "1.56.1",
+    "typescript": "5.9.3"
+  }
+}
